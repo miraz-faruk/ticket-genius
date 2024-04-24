@@ -10,6 +10,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Custom CSS link -->
     <link rel="stylesheet" href="styles/style.css">
+    <!-- Font Awesome link -->
+    <script src="https://kit.fontawesome.com/e89d4697c7.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -194,8 +196,54 @@
                     </div>
                 </div>
             </div>
+            <!-- Seat Plan and Ticket Management-->
+            <div class="bg-white p-8 rounded-3xl">
+                <!-- Seat Plan -->
+                <div>
+                    <h3 class="mb-6 text-2xl font-semibold">Select Your Seat</h3>
+                    <hr class="border border-dashed mb-4">
+                    <div class="flex justify-between">
+                        <div class="flex items-center gap-2">
+                            <img class="border border-dashed" src="images/seat-gray.png" alt="">
+                            <p class="text-lg font-medium text-[#03071280]">Available</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <img class="border border-dashed" src="images/seat-green-filled.png" alt="">
+                            <p class="text-lg font-medium text-[#1DD100]">Selected</p>
+                        </div>
+                    </div>
+                    <hr class="border border-dashed my-4">
+                </div>
+            </div>
         </section>
     </main>
+    <!-- Footer section -->
+    <footer class="bg-black text-white px-[135px] py-[120px]">
+        <div class="flex justify-between">
+            <div class="mb-12">
+                <h1 class="text-4xl font-extrabold mb-4">
+                    TicketGenius</h1>
+                <p class="text-lg text-[#FFFFFFCC]">TicketGenius is a digital platform to make<br>your daily commuting
+                    better.</p>
+            </div>
+            <div>
+                <p class="text-xl font-semibold">Download Our App</p>
+                <div class="flex gap-3 mt-5 border rounded-lg px-3 py-2">
+                    <img src="images/playstore.png" alt="">
+                    <p class="text-xs leading-3">GET IT ON<br><span class="text-xl">Google Play</span></p>
+                </div>
+            </div>
+        </div>
+        <hr class="border-[#FFFFFF4D] border-dashed">
+        <div class="flex justify-between mt-8">
+            <p class="text-[#FFFFFFB3]">@all rights reserved, TicketGenius services limited.2024</p>
+            <div class="flex gap-8 font-medium">
+                <p>Terms & condition</p>
+                <p>Return & refund policy</p>
+                <p>Privacy policy</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
