@@ -19,12 +19,20 @@ seatButtons.forEach(seatButton => {
                 const currentSeats = getTextElementValueById('current-seats');
                 const updatedSeats = currentSeats - 1;
                 setTextElementValueById('current-seats', updatedSeats);
+
+                const currentSeatsFromPurchase = getTextElementValueById('selected-seat-count');
+                const updatedSeatsFromPurchase = currentSeatsFromPurchase + 1;
+                setTextElementValueById('selected-seat-count', updatedSeatsFromPurchase);
             } else {
                 this.style.backgroundColor = '';
                 selectedSeats.splice(selectedSeats.indexOf(this.id), 1);
                 const currentSeats = getTextElementValueById('current-seats');
                 const updatedSeats = currentSeats + 1;
                 setTextElementValueById('current-seats', updatedSeats);
+
+                const currentSeatFromPurchase = getTextElementValueById('selected-seat-count');
+                const updatedSeatsFromPurchase = currentSeatFromPurchase - 1;
+                setTextElementValueById('current-seats', updatedSeatsFromPurchase);
             }
 
             console.log('Selected seats:', selectedSeats);
