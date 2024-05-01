@@ -19,3 +19,30 @@ function setTextElementValueById(elementId, value) {
     const element = document.getElementById(elementId);
     element.innerText = value;
 }
+
+function showElementById(elementId) {
+    const element = document.getElementById(elementId);
+    element.classList.remove('hidden');
+}
+
+function changeSeatName(elementId) {
+    const seatName = getTextElementValueById(elementId);
+    const updatedSeatName = selectedSeats;
+    setTextElementValueById(elementId, updatedSeatName);
+    return updatedSeatName;
+}
+
+function hideElementById(elementId) {
+    const element = document.getElementById(elementId);
+    element.classList.add('hidden');
+}
+
+function changeSeatName(containerId, seatName) {
+    const container = document.getElementById(containerId);
+    if (container) {
+        const seatNameElement = container.querySelector('.seat-name');
+        if (seatNameElement) {
+            seatNameElement.textContent = seatName;
+        }
+    }
+}

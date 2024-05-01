@@ -23,6 +23,13 @@ seatButtons.forEach(seatButton => {
                 const currentSeatsFromPurchase = getTextElementValueById('selected-seat-count');
                 const updatedSeatsFromPurchase = currentSeatsFromPurchase + 1;
                 setTextElementValueById('selected-seat-count', updatedSeatsFromPurchase);
+
+                const lastIndex = selectedSeats.length - 1;
+                const containerId = `selected-seats-container${lastIndex + 1}`;
+                const seatName = this.id;
+                showElementById(containerId);
+                changeSeatName(containerId, seatName);
+
             } else {
                 this.style.backgroundColor = '';
                 selectedSeats.splice(selectedSeats.indexOf(this.id), 1);
@@ -32,7 +39,11 @@ seatButtons.forEach(seatButton => {
 
                 const currentSeatFromPurchase = getTextElementValueById('selected-seat-count');
                 const updatedSeatsFromPurchase = currentSeatFromPurchase - 1;
-                setTextElementValueById('current-seats', updatedSeatsFromPurchase);
+                setTextElementValueById('selected-seat-count', updatedSeatsFromPurchase);
+
+                const index = selectedSeats.indexOf(this.id);
+                const containerId = `selected-seats-container${index + 1}`;
+                hideElementById(containerId);
             }
 
             console.log('Selected seats:', selectedSeats);
@@ -42,3 +53,8 @@ seatButtons.forEach(seatButton => {
         }
     });
 });
+
+
+
+
+
