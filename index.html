@@ -14,7 +14,7 @@
     <script src="https://kit.fontawesome.com/e89d4697c7.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body class="min-h-screen">
     <!-- Header section -->
     <header class="container mx-auto mb-28">
         <!-- Navbar section  -->
@@ -137,7 +137,7 @@
             </div>
         </section>
         <!-- Main section -->
-        <section id="main-screen" class="bg-[#F7F8F8] rounded-t-[88px] px-32 py-28 border-t-2 border-[#1DD100] hidden">
+        <section id="main-screen" class="bg-[#F7F8F8] rounded-t-[88px] px-32 py-20 border-t-2 border-[#1DD100] hidden">
             <!-- Title and Desc -->
             <div class="text-center mb-12">
                 <h3 class="text-[40px] font-bold mb-6">TicketGenius</h3>
@@ -321,27 +321,32 @@
                                 <p>Total Price</p>
                                 <p>BDT <span id="total-price">0</span></p>
                             </div>
-                            <div class="flex relative mb-6">
-                                <input type="text" placeholder="Have any coupon?"
+                            <div id="discounted-amount-field"
+                                class="flex justify-between text-base font-medium hidden mb-6">
+                                <p>Discounted Amount</p>
+                                <p>BDT <span id="discounted-amount">0</span></p>
+                            </div>
+                            <div id="coupon-code-section" class="flex relative mb-6 hidden">
+                                <input id="coupon-code-field" type="text" placeholder="Have any coupon?"
                                     class="text-sm input w-full py-9 pl-5 pr-12 rounded-xl" />
-                                <button
+                                <button id="apply-coupon-button"
                                     class="bg-[#1DD100] border-0 rounded-lg px-4 py-2 m-3 text-white font-semibold absolute inset-y-0 right-0">Apply</button>
                             </div>
                             <div class="flex justify-between text-base font-medium">
                                 <p>Grand Total</p>
-                                <p>BDT <span>0</span></p>
+                                <p>BDT <span id="grand-total">0</span></p>
                             </div>
                         </div>
                         <div class="pt-6 flex flex-col justify-center">
                             <p class="text-base font-medium pb-4">Passenger Name*</p>
                             <input type="text" placeholder="Type here" class="input input-bordered input-lg w-full" />
                             <p class="text-base font-medium py-4">Phone Number*</p>
-                            <input type="number" placeholder="Enter your phone number"
+                            <input id="passenger-input" type="number" placeholder="Enter your phone number"
                                 class="input input-bordered input-lg w-full" />
                             <p class="text-base font-medium py-4">Email ID</p>
                             <input type="email" placeholder="Enter your email id"
                                 class="input input-bordered input-lg w-full" />
-                            <button
+                            <button onclick="validatePassengerNumber()"
                                 class="mt-9 mb-6 bg-[#1DD100] border-0 rounded-lg py-5 text-white font-semibold w-full">Next</button>
                             <div class="flex gap-11 justify-center text-[#03071299] underline">
                                 <a href="">Terms and Conditions</a>
@@ -380,6 +385,28 @@
             </div>
         </div>
     </footer>
+    <div id="myModal" class="fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog"
+        aria-modal="true">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="relative bg-white rounded-lg p-20">
+                <div class="flex flex-col justify-center items-center gap-9 mx-10">
+                    <img src="images/success.png" alt="">
+                    <h1 class="text-[#27AE60] text-2xl font-bold border border-dashed">
+                        Success</h1>
+                    <p class="text-[#4A4A4A] text-xl font-medium text-center">Thank you for Booking Our Bus
+                        Seats.
+                        We are working hard to find the best service and deals for you. <br>
+                        <span class="text-xl font-light">Shortly you will find a confirmation in
+                            your email..</span>
+                    </p>
+                    <button id="closeModal"
+                        class="bg-[#27AE60] text-white focus:outline-none py-4 px-28 rounded-[32px] text-xl font-semibold">
+                        continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="scripts/utility.js"></script>
     <script src="scripts/ticket-genius.js"></script>
 </body>
